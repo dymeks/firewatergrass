@@ -1,0 +1,37 @@
+<!-- Stephen Silverstein
+	https://github.com/sjsilverstein -->
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<meta name="description" content="The text here describes what the webpage
+		is about. It's what will show up in search results for search engines like
+		google under the title of the webpage. It's important that this is relevant
+		to your page and well written!">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/myStyle.css')}}"> <!-- my style.css -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="{{ url_for('static', filename='js/myJavaScript.js') }}"></script> <!-- myJavaScript -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<p>Wins:{{ win }}</p>
+			<p>Losses:{{ loss }}</p>
+			<p>Ties:{{ tie }}</p>
+			<h1>Fire Water Grass</h1>
+			<h2>{{ message }}</h2>
+			<form action="/rolltype" method="post">
+				<input type="submit" name="type" value="fire">
+			</form>
+			<form action="/rolltype" method="post">
+				<input type="submit" name="type" value="water">
+			</form>
+
+			<form action="/rolltype" method="post">
+				<input type="submit" name="type" value="grass">
+			</form>
+
+
+		</div>
+	</body>
+	</html>
